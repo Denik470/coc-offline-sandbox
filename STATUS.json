@@ -1,0 +1,199 @@
+{
+  "offline_client_ready": false,
+  "native_android_logic_ready": true,
+  "native_home_state_ready": true,
+  "native_npc_attack_state_ready": true,
+  "native_unit_deployment_ready": true,
+  "native_combat_steps": 2048,
+  "attacker_moved": true,
+  "attacker_hp_before": 4500,
+  "attacker_hp_last_observed": 0,
+  "attacker_present_after": false,
+  "renderer_ready": false,
+  "touch_controls_ready": false,
+  "save_edits_ready": true,
+  "internet_permission": false,
+  "apk": "offline-combat-lab.apk",
+  "evidence": "android-combat-check.txt",
+  "original_loading_screen_rendered": true,
+  "original_loading_screen_uses_packaged_assets": true,
+  "original_loading_screen_evidence": "packaged-assets-screen.png",
+  "original_loading_screen_apk": "offline-renderer-loading-lab.apk",
+  "native_graphics_surface_size": [
+    2800,
+    1272
+  ],
+  "original_game_metadata_still_required": true,
+  "frontend_native_home_entry_integrated": true,
+  "latest_combined_build_evidence": "decoded-assets-combat-check.txt",
+  "latest_loading_screen_evidence": "asset-registry-screen.png",
+  "renderer_native_tables_observed": {
+    "present": 116,
+    "read": 116,
+    "linked": 115,
+    "absent_indices": [
+      4,
+      54,
+      90
+    ],
+    "absent_indices_also_absent_in_reference_registry": true
+  },
+  "current_graphics_blocker": "none for home; next: army training, battle with original graphics, local resource top-up in shop",
+  "frontend_local_home_submission_verified": true,
+  "frontend_local_home_state_loaded": true,
+  "input_sdk_local_registry_ready": true,
+  "incorrect_install_warning_resolved": true,
+  "latest_frontend_evidence": "push1-renderer-progress.txt",
+  "home_assets_packaged_files": 189,
+  "home_assets_missing": [
+    "sc/decos.sc"
+  ],
+  "home_assets_test_evidence": "home-assets-renderer-progress.txt",
+  "home_assets_test_apk": "offline-home-assets-lab.apk",
+  "sigtrap_origin": {
+    "offset": "0xc8b634",
+    "assertion": "m_loaded",
+    "message": "Failed to load Asset Dependency Database",
+    "missing_packaged_file": "data/assetdependencies.flat",
+    "fix_packaged": true,
+    "fix_on_device_verified": true
+  },
+  "original_home_village_rendered": true,
+  "original_home_village_evidence": [
+    "push1-screen.png",
+    "live1.png",
+    "touch2b.png"
+  ],
+  "original_home_village_apk": "offline-village-lab.apk",
+  "touch_basic_tap_scroll_verified": true,
+  "player_avatar_loaded": true,
+  "player_avatar_source": "local-lab/capture/avatar-native-operations.json replayed into ClientAvatar::decode cd5220 (3163/3163 ops)",
+  "player_avatar_evidence": "av1.png",
+  "account_id": "70-3604252 (from captured avatar)",
+  "building_menu_opens": true,
+  "shop_opens": true,
+  "menu_evidence": [
+    "menu1.png",
+    "shop1.png"
+  ],
+  "logic_ticking_offline": true,
+  "logic_tick_evidence": "Tick gate subtick 308→1254 over 15 s after clearing GameMain+0x190 network error",
+  "local_commands_apply": true,
+  "local_commands_evidence": "gem finish of Air Sweeper-mine upgrade: gems 444→257, builder freed (c2.png)",
+  "save_edits_evidence": "save-home.json + save-avatar.bin in app files dir, written every 300 frames; after force-stop/restart gems 257 and 1/6 builders persisted (persist1.png)",
+  "building_move_ui_verified": true,
+  "building_move_persist_verified": false,
+  "local_battle_starts": true,
+  "local_battle_evidence": [
+    "atk4.png",
+    "dep1.png",
+    "end2.png"
+  ],
+  "local_battle_target": "copy of player home (NPC level JSONs are server-side only)",
+  "local_battle_trigger": "native matchmaking (volume-down still triggers it too)",
+  "battle_return_home": "relaunch via RestartActivity; in-place re-entry leaves GUI on clouds; troop consumption persistence NOT verified; after relaunch the original game once came to foreground — automated taps suspended",
+  "army_training_verified": false,
+  "apk_battle": "offline-battle-lab.apk",
+  "army_editor_works": true,
+  "layout_editor_works": true,
+  "layout_slots_in_game": 3,
+  "layout_bank_cells": 10,
+  "resource_topup": "HUD + buttons next to gold/elixir/dark elixir/gems (hidden when popups/edit mode/battle)",
+  "offline_tools_overlay": "⚙ Офлайн button (top centre): top-up resources to storage caps + 100000 gems; layout bank save slot->cell / load cell->slot (edits saves, relaunch)",
+  "back_key": "routed to game backButtonPressed, else moveTaskToBack",
+  "sandbox_ready_for_testing": true,
+  "sandbox_apk": "offline-sandbox-lab.apk + offline-split-homeassets.apk (install with deploy.py)",
+  "attack_flow": "native В бой menu (trimmed: no single player/training/ranked/star bonus) → Подбор → army confirm → game-styled target chooser (filled layout slots) → friendly-challenge battle on full home map with main army → Сдаться/end → Домой → relaunch to home",
+  "layout_slots_home_tab": 9,
+  "layout_editor_from_attack_menu": "sword-and-list button of the Сражение card",
+  "super_troops_all_active": "renewed to 72h on every launch",
+  "known_issues": [
+    "builder/pet timers on the left show thousands of days (time base)"
+  ],
+  "attack_menu_narrowed": true,
+  "layout_thumbnails_ok": true,
+  "battle_return": "in place (no relaunch)",
+  "army_templates_ok": true,
+  "obstacles_removed_inside_base": true,
+  "launcher": "\"CoC Sandbox\" icon (original game adaptive icon) starts RenderActivity with the local home; no adb needed",
+  "codex_2026_10_25": {
+    "workflow": "Build and install through USB; user performs gameplay testing. Routine USB updates authorized.",
+    "equipment_zero_based_fix": "Display stored+1; write selected-1; maximum max-1. Prior invalid max index repaired on next equipment write.",
+    "equipment_picker": "Compact slider, +/- and numeric input. Existing Android offline panel, not a native game popup. Awaiting user test.",
+    "avatar_parser": "Real saved avatar accepted, six malformed inputs rejected on host JVM; writes validated.",
+    "scenery": "67 HOME backgrounds catalog; vbgs ownership on startup; all scenery table resources in split. Awaiting user test.",
+    "clan_games": "Captured alliance_games removed on startup; awaiting visual confirmation.",
+    "installation": "Latest base and updated scenery split installed successfully through USB on 2026-10-25. User gameplay tests pending.",
+    "pending": [
+      "Native resource and level GUI",
+      "Troop and hero level controls",
+      "Challenge modifiers Legendary I/II/III and esports",
+      "Defense and defensive hero audit",
+      "Attack layout coordinate audit",
+      "Screenshot layout reconstruction later"
+    ]
+  },
+  "user_confirmed_2026_10_25": [
+    "Equipment level fix works",
+    "Scenery update works",
+    "Captured clan games removed"
+  ],
+  "sandbox_ui_v2": {
+    "installation": "Installed successfully over USB (base-only update) on 2026-10-25; gameplay testing pending user.",
+    "gameplay_tests": "User performs device testing; no automated UI tests run.",
+    "menu": "Dedicated top-centre Sandbox entry, category grid, searchable unit lists; game fonts and colours. Android overlay, not an original native popup.",
+    "level_editor": [
+      "troops",
+      "heroes",
+      "pets",
+      "spells",
+      "equipment"
+    ],
+    "level_encoding": "All upgrade indices zero based; UI level=stored+1. Table-derived per-unit maxima, existing owned units only.",
+    "hero_snapshot": "Avatar level and embedded Hero Hall heroLevel kept in sync; avatar rolled back if home write fails.",
+    "attack_layout_fix": "heroFlags coordinates and per-slot hero/guardian assignments copied; active/home/war/defensive layout selected as slot0. No fallback to unrelated building positions. Defense aim direction and attack mode copied for selected slot.",
+    "graphics_assets": "All 11 standalone image textures now packaged, including range textures and air_wave_tex/air_wave_shadow; combat ranges and pushback values unchanged.",
+    "cloud_delay_frames": {
+      "before": 360,
+      "after": 30,
+      "gate": "mode1, no pending home, progress1"
+    },
+    "host_checks": "tests/verify_save_transforms.py passed actual Java list selection, isolated level writes and nine layout-slot fixtures.",
+    "pending": [
+      "User visual/behavior confirmation",
+      "Legendary I/II/III and esports modifiers",
+      "Full native engine GUI integration",
+      "Full defense behavior comparison",
+      "Screenshot layout reconstruction later"
+    ],
+    "base_apk_sha256": "0f802c0ffeb4919909a5fb7ed16dad580cac126b39f7b0751ca4cc199ed5dd95"
+  },
+  "attack_mode_type_fix": {
+    "reported_error": "Value false at attack_mode5 of type java.lang.Boolean cannot be converted to int",
+    "cause": "Attack-layout normalization treated every defense mode as integer.",
+    "change": "Copy JSON value as Object; preserve boolean and numeric types; defaults follow original active-field type.",
+    "regression": "Actual Java normalization tested across nine slots with boolean true/false, numeric mode and weapon variants.",
+    "installation": "USB base-only update succeeded; user gameplay confirmation pending",
+    "base_sha256": "2be18b8b0834e15eab354abb02c90a44687b5280d6698deb2676438f01a928f8"
+  },
+  "building_guardian_editor": {
+    "base_sha256": "8480d0e3272b0723393fcc86bb41c8c2027c78d94b94a131f0fccafbcbd1410e",
+    "installation": "USB base-only update succeeded on 2026-10-25. User gameplay checks pending.",
+    "level_picker": "Wider centred scrollable window (58% width/84% height), wrap-content numeric field and keyboard resize. Awaiting user visual confirmation.",
+    "building_selection": "Native selection sampled on logic thread via1837688/+20/+c8/+8; only validated data+instance ID pair sent to Java. Selection chip plus searchable building list fallback. Awaiting device confirmation.",
+    "building_edit": "Table-derived maximum, write lvl=display-1; preserve merged type, identity and all layout positions. Refuse const_t construction.",
+    "unmerge": "Not implemented. Merged buildings can be lowered to level1 while staying merged.",
+    "guardian_edit": "Existing owned guardian_manager.m_pGuardians only; update m_pGuardianUpgradeLevel=display-1 without changing assignment.",
+    "local_checks": "Android build/signature and actual Java save-transform tests passed, including merged identity preservation, cross-village ID collision and guardian metadata.",
+    "test_responsibility": "User tests gameplay; Codex installs via USB only, no game launch."
+  },
+  "single_apk_packaging": {
+    "path": "/Users/1poppe/Documents/Codex/Clash-Sandbox-OneAPK/CoC-Sandbox.apk",
+    "bytes": 1926378948,
+    "sha256": "9268075847f58d4f61e40f0ff3bc3daafa9474320fbea3f5271bb7b1c1759ae3",
+    "verified_members": 9103,
+    "original_package_required": true,
+    "gameplay_tested": false,
+    "installed_on_phone": false
+  }
+}

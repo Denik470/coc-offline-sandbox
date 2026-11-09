@@ -1,0 +1,10 @@
+Открой локальный репозиторий:
+/Users/1poppe/Documents/Codex/2026-10-23/new-chat/outputs/clash-analysis-18.647.5/android-offline
+
+Ты работаешь параллельно с Codex над локальным Android-клиентом. Сначала прочитай coordination/README.md, затем coordination/tasks/UI-001.md. Выполни UI-001, соблюдая границы записи: parallel/antigravity/ и coordination/ANTIGRAVITY_REPORT.md. Codex занимается native-логикой и интеграцией, не меняй его файлы.
+
+Workspace: /Users/1poppe/Documents/Codex/2026-10-23/new-chat
+SDK/NDK: /Users/1poppe/Documents/Codex/2026-10-23/new-chat/work/android-sdk
+JDK: /opt/homebrew/opt/openjdk
+
+Начни с первого законченного экрана деревни и интерактивного HUD. Нужен реально собираемый Android UI-прототип, исходники и отчёт о проверке. Оригинальные ресурсы использовать там, где они доступны; недостающую графику честно перечислить. Не выдавать этот прототип за полностью готовую игру. Не заниматься повторным reverse engineering и не использовать телефон/ADB. Береги лимиты: читай только нужные файлы. Работай автономно до конкретного проверяемого результата и запиши итог в coordination/ANTIGRAVITY_REPORT.md.
