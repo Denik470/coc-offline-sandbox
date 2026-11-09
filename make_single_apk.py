@@ -22,6 +22,7 @@ JAVA_HOME = '/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home'
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--output', required=True)
 p.add_argument('--state-tar', type=Path)
+p.add_argument('--exclude', action='append', default=[], help='leave out entries under this path prefix (repeatable)')
 a = p.parse_args()
 output = Path(a.output).resolve()
 output.parent.mkdir(parents=True, exist_ok=True)
@@ -47,6 +48,8 @@ with zipfile.ZipFile(unsigned, 'w', allowZip64=False) as target:
         with zipfile.ZipFile(apk) as source:
             for original in source.infolist():
                 if original.is_dir() or signature(original.filename) or (asset_only and not original.filename.startswith('assets/')):
+                    continue
+                if any(original.filename.startswith(x) for x in a.exclude):
                     continue
                 if original.filename in expected:
                     digest = hashlib.sha256()
